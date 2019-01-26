@@ -1,0 +1,8 @@
+Start hadoop:
+/home/hadoop/hadoop/share/hadoop/tools/lib/start-hadoop.sh
+Hadoop streaming job for mapper reducer:
+/home/hadoop/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.6.4.jar \ -files /home/hadoop/hduser/mapper.py -mapper /home/hadoop/hduser/mapper.py \ -file /home/hadoop/hduser/reducer.py -reducer /home/hadoop/hduser/reducer.py \ -input /input \ -output output 
+Regular Pipeline funciton: 
+cat /home/hadoop/tmp/4300-0.txt | /home/hadoop/hduser/mapper.py | sort | /home/hadoop/hduser/reducer.
+Write to local file from hdfs: 
+/home/hadoop/NewsData/OutputNews2.txt | tr -s '[:blank:]' ',' > /home/hadoop/NewsData/new.csv 
